@@ -11,4 +11,4 @@ The metrics are the number of correct predictions, the number of correct charact
 
 We will be able to qualitatively determine whether or not our agent behaves appropriately by observing the agent's actions on the characters. As far as we plan, the agent will stare right at the character when the mission starts. All it has to do is determine the character and perform action on that character. Our moonshoot case is that the agent sees the character from far away, walk towards the character then perform an action. In order to solve this case, we might need to use computer vision to figure out the distance and direction from the agent to the character, also adjust the agents aiming so that it can accurately shoot the character.
 ## Appointment with the Instructor
-edit text here
+Monday, April 29 at 10:00am
