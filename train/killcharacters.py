@@ -16,6 +16,7 @@ from collections import defaultdict, deque
 from timeit import default_timer as timer
 
 import world_generator
+import imageprocessing
 
 
 
@@ -72,18 +73,18 @@ if __name__ == '__main__':
         world_state = agent_host.getWorldState()
         for error in world_state.errors:
             print("Error:",error.text)
-        '''
+        
         if world_state.number_of_video_frames_since_last_state > 0:
                 cur_time = time.time()
                 if cur_time - past_time > 3:
                     print("image to save!")
                     img = world_state.video_frames[-1].pixels
                    
-                    imageprocessing.saveArrayAsImg(img, 800, 500, "./img/" + "_"  + str(c) + ".jpg",
-                                   "./img/" + "_"  + str(c) + "_d" + ".jpg")
+                    imageprocessing.saveArrayAsImg(img, 800, 500, "./screenshots/" + "_"  + str(c) + ".jpg",
+                                   "./screenshots/" + "_"  + str(c) + "_d" + ".jpg")
                     c += 1
                     past_time = cur_time
-        '''
+        
 
     print()
     print("Mission ended")
