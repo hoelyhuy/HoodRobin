@@ -1,6 +1,6 @@
 # TeamBEH
 CS175 project in Minecraft<br />
-project website https://hoelyhuy.github.io/TeamBEH/<br />
+project website https://hoelyhuy.github.io/HoodRobin/<br />
 Youtube link to image detection (not really important)<br />
 https://www.youtube.com/watch?v=4eIBisqx9_g&t=194s<br />
 Youtube link on how to install on Windows (anaconda is required):<br />
