@@ -13,7 +13,9 @@ Another thing that we need to do is implement the algorithm to aim at a target o
 One limitation that we can think of is the overhead to load the agent's current view into the object detector. We need the detector to be able to detect the target in real time. If loading image takes too much time, the target might have already moved to a different place.
 ## Resources Used
 [Image Capture](https://github.com/jennyzeng/Minecraft-AI)
+<br />
 [Image Labeling software](https://github.com/tzutalin/labelImg)
+<br />
 [YOLO Object Detection (You Only Look Once)](https://github.com/thtrieu/darkflow)
 
 
