@@ -10,6 +10,8 @@ def GetMissionXML(summary):
     sheep_mob = 'type="Sheep"'
     pig_mob = 'type="Pig"'
     cow_mob = 'type="Cow"'
+    ozelot_mob = 'type="Ozelot"'
+    rabbit_mob = 'type="Rabbit"'
     polarbear_mob = 'type="PolarBear"'
     fence = 'type="fence_gate"'
     missionXML = '''<?xml version="1.0" encoding="UTF-8" ?>
@@ -31,10 +33,17 @@ def GetMissionXML(summary):
                   <DrawingDecorator>
                       <DrawEntity ''' + spawn_ebaniy_mob() + sheep_mob + '''/>
                       <DrawEntity ''' + spawn_ebaniy_mob() + sheep_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + ozelot_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + ozelot_mob + '''/>
                       <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
                       <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
-                      <DrawEntity ''' + spawn_ebaniy_mob() + cow_mob + '''/>
-                      <DrawEntity ''' + spawn_ebaniy_mob() + cow_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + rabbit_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + rabbit_mob + '''/>
                       <DrawLine x1="290" y1="227" z1="349" x2="310" y2="227" z2="349" type="jungle_fence"/>
                       <DrawLine x1="289" y1="227" z1="349" x2="289" y2="227" z2="369" type="jungle_fence"/>
                       <DrawLine x1="290" y1="227" z1="369" x2="310" y2="227" z2="369" type="jungle_fence"/>
@@ -54,7 +63,8 @@ def GetMissionXML(summary):
                         <InventoryItem slot="37" type="golden_leggings"/>
                         <InventoryItem slot="38" type="diamond_chestplate"/>
                         <InventoryItem slot="39" type="diamond_helmet"/>
-                        <InventoryItem slot="0" type="diamond_sword"/>
+                        <InventoryItem slot="0" type="bow"/>
+                        <InventoryItem slot="1" type="arrow" quantity="64"/>
                     </Inventory>
                 </AgentStart>
                 <AgentHandlers>

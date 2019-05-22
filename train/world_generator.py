@@ -10,6 +10,8 @@ def GetMissionXML(summary):
     sheep_mob = 'type="Sheep"'
     pig_mob = 'type="Pig"'
     cow_mob = 'type="Cow"'
+    ozelot_mob = 'type="Ozelot"'
+    rabbit_mob = 'type="Rabbit"'
     polarbear_mob = 'type="PolarBear"'
     fence = 'type="fence_gate"'
     missionXML = '''<?xml version="1.0" encoding="UTF-8" ?>
@@ -30,10 +32,10 @@ def GetMissionXML(summary):
                   <FlatWorldGenerator generatorString="3;7,220*1,5*3,2;3;,biome_1"/>
                   <DrawingDecorator>
                       <DrawEntity ''' + spawn_ebaniy_mob() + sheep_mob + '''/>
-                      <DrawEntity ''' + spawn_ebaniy_mob() + sheep_mob + '''/>
                       <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
                       <DrawEntity ''' + spawn_ebaniy_mob() + pig_mob + '''/>
-                      <DrawEntity ''' + spawn_ebaniy_mob() + cow_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + rabbit_mob + '''/>
+                      <DrawEntity ''' + spawn_ebaniy_mob() + ozelot_mob + '''/>
                       <DrawEntity ''' + spawn_ebaniy_mob() + cow_mob + '''/>
                       <DrawLine x1="290" y1="227" z1="349" x2="310" y2="227" z2="349" type="jungle_fence"/>
                       <DrawLine x1="289" y1="227" z1="349" x2="289" y2="227" z2="369" type="jungle_fence"/>
