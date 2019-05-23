@@ -18,9 +18,9 @@ For our project, we will use computer vision to detect objects that are currentl
 Our dataset is generated from Malmo Minecraft as image files and we use an image labeling software to label those images. We will use our data (about 1300 images by time of final submission) to train our neural network for object detection. 
 <br />
 # Input
-![alt text](https://ibb.co/hWhFtQC)
+![alt text](input_index.jpg)
 # Output
-![alt text](https://ibb.co/8McH2pH)
+![alt text](output_index.jpg)
 <br />
 ## Team members
 Edwin Li

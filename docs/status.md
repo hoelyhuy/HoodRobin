@@ -10,9 +10,9 @@ Firstly, we write a program to generate our dataset. This program captures the a
 Since our project mainly focus on image detection, the performance of the project is measured by how accurately our object detector detects the animals. After we finish training our dataset, we will test our model on a set of 100 images that are generated from the game. The accuracy is the number of correct detections over the total number of objects. These numbers are counted manually.
 <br />
 # Input
-![alt text](https://github.com/hoelyhuy/HoodRobin/blob/master/docs/input_status.jpg)
+![alt text](input_status.jpg)
 # Output
-![alt text](https://github.com/hoelyhuy/HoodRobin/blob/master/docs/output_status.jpg)
+![alt text](output_status.jpg)
 <br />
 From the example above, we can see that there are a total of 6 objects in the image: a cow, an ozelot, a rabbit, and 3 pigs. Our object detector is able to correctly detect 4 objects.
 ## Remaining Goals and Challenges
