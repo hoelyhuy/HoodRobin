@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>_13.jpg</filename>
+	<path>/Users/ed-1/Documents/cs175/training-set/images/_13.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pig</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>412</xmin>
+			<ymin>254</ymin>
+			<xmax>611</xmax>
+			<ymax>488</ymax>
+		</bndbox>
+	</object>
+</annotation>

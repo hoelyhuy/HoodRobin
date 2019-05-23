@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>_161.jpg</filename>
+	<path>/Users/ed-1/Documents/cs175/training-set/images/_161.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sheep</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>340</xmin>
+			<ymin>247</ymin>
+			<xmax>441</xmax>
+			<ymax>369</ymax>
+		</bndbox>
+	</object>
+</annotation>
