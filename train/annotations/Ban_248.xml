@@ -1,0 +1,38 @@
+<annotation>
+	<folder>screenshots</folder>
+	<filename>_248.jpg</filename>
+	<path>C:\Users\mrgam\Desktop\Ban\UCI\2019 Spring\CS 175\proj\TeamBEH\train\screenshots\_248.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sheep</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>43</xmin>
+			<ymin>255</ymin>
+			<xmax>206</xmax>
+			<ymax>413</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>sheep</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>407</xmin>
+			<ymin>264</ymin>
+			<xmax>540</xmax>
+			<ymax>452</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -23,6 +23,18 @@ import imageprocessing
 if __name__ == '__main__':
     random.seed(0)
     c = 1
+    dirFiles = os.listdir('./screenshots')
+    if dirFiles:
+        a = -1
+        for num, i in enumerate(dirFiles):
+            if i.endswith('.jpg'):
+                t = i.find('_') + 1
+                dirFiles[num] = int(i[t:].rstrip('.jpg'), 10)
+            else:
+                a = num
+        if a > -1:
+            dirFiles.pop(a)
+        c = max(dirFiles) + 1
     print('Starting...', flush=True)
     agent_host = MalmoPython.AgentHost()
     try:

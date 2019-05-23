@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>screenshots</folder>
+	<filename>_182.jpg</filename>
+	<path>C:\Users\mrgam\Desktop\Ban\UCI\2019 Spring\CS 175\proj\TeamBEH\train\screenshots\_182.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sheep</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>347</xmin>
+			<ymin>257</ymin>
+			<xmax>407</xmax>
+			<ymax>304</ymax>
+		</bndbox>
+	</object>
+</annotation>
