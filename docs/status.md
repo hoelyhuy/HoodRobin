@@ -9,12 +9,13 @@ Firstly, we write a program to generate our dataset. This program captures the a
 ## Evaluation
 Since our project mainly focus on image detection, the performance of the project is measured by how accurately our object detector detects the animals. After we finish training our dataset, we will test our model on a set of 100 images that are generated from the game. The accuracy is the number of correct detections over the total number of objects. These numbers are counted manually.
 <br />
-# Input
-![alt text](input_status.jpg)
-# Output
-![alt text](output_status.jpg)
+## Current Progress
+### Input
+<img src="input_status.jpg" alt="input_status.jpg" style="width:50%;height:50%">
+### Output
+<img src="output_status.jpg" alt="output_status.jpg" style="width:50%;height:50%">
 <br />
-From the example above, we can see that there are a total of 6 objects in the image: a cow, an ozelot, a rabbit, and 3 pigs. Our object detector is able to correctly detect 4 objects.
+From the example above, we can see that there are a total of 11 objects in the image: 3 cows, 2 ozelots, and 6 pigs. Our object detector is able to correctly detect 6 objects.
 ## Remaining Goals and Challenges
 For the remaining 2-3 weeks, we will try to improve the accuracy of our detector by training our neural network on a larger size dataset. At present, our network is trained on 400 images and has decent performance. We shoot for over 1000 images in our training dataset.
 <br />
