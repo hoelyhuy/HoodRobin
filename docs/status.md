@@ -7,6 +7,10 @@ Our Minecraft-AI project will focus on recognizing different characters in Minec
 ## Approach
 ## Evaluation
 Since our project mainly focus on image detection, the performance of the project is measured by how accurately our object detector detects the animals. After we finish training our dataset, we will test our model on a set of 100 images that are generated from the game. The accuracy is the number of correct detections over the total number of objects. These numbers are counted manually.
+<br />
+
+<br />
+From the example above, we can see that there are a total of 6 objects in the image: a cow, an ozelot, a rabbit, and 3 pigs. Our object detector is able to correctly detect 4 objects.
 ## Remaining Goals and Challenges
 For the remaining 2-3 weeks, we will try to improve the accuracy of our detector by training our neural network on a larger size dataset. At present, our network is trained on 400 images and has decent performance. The detector is able to detect more than half of the objects. We shoot for 1000 images in our training dataset.
 Another thing that we need to do is implement the algorithm to aim at a target object. Darkflow provides an option to return the results of image detection in a form of JSON array. Each element in the JSON array is detected object. From that, we can determine where the target is then move the aim to aim at the target and the shoot at the target.
