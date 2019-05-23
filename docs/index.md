@@ -16,7 +16,12 @@ title:  Home
 ## What is our project about?
 For our project, we will use computer vision to detect objects that are currently in the view of the agent and try to atack the target object. We choose the target object to be Pigs, and our agent will try to shoot an arrow at pigs. Using an Object Detection algorithm called YOLO (You Only Look Once), we are able to detect the objects in the agents 2D view which might be Sheeps, Pigs, Cows, Rabbits, Ozelots. From that, we can detect where our target is, move our aim towards target and shoot an arrow at the target. 
 Our dataset is generated from Malmo Minecraft as image files and we use an image labeling software to label those images. We will use our data (about 1300 images by time of final submission) to train our neural network for object detection. 
-
+<br />
+# Input
+![alt text](https://github.com/hoelyhuy/HoodRobin/blob/master/docs/input_index.jpg)
+# Output
+![alt text](https://github.com/hoelyhuy/HoodRobin/blob/master/docs/output_index.jpg)
+<br />
 ## Team members
 Edwin Li
 <br />
