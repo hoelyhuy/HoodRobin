@@ -1,0 +1,12 @@
+1. Problem Description
+For our project, we wanted to make the player agent detect animals that are currently in the agent’s view and make it attack a specified target by shooting at it with a bow and arrow.
+
+To achieve this, we constructed a world without any features other than a fence enclosure and some animals. We took hundreds of screenshots with cows, sheep, and pigs in the agent’s view. Using an image labeling software called labelImg, we drew boxes and labeled each animal. labelImg converted this into a PascalVOC .xml file that contains the coordinates of the boxes and labels in the screenshots. These .xml files were then used with YOLO (You Only Look Once), a real time object detection system.
+// Show screenshots or video of labelImg and .xml files during this section
+
+2. Baseline
+The baseline we set for our agent AI was to correctly detect and identify a single animal as a pig.
+
+3. Example Working Run
+Here, you can see YOLO detecting cows, pigs, sheep, rabbits, and ocelots. It draws a box and label on-screen around each object in the view it thinks it is. Our agent then aims at  any pig labels and fires an arrow.
+// Addition(?): One problem right now is that the pig is only tracked to the moment the AI decides to start drawing the arrow back. Our AI does not continue to track the pig if it moves before the arrow is released, leading to some shots that miss.
