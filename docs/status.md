@@ -13,10 +13,10 @@ Secondly, we use all the images that we have generated and their corresponding a
 <br />
 Once we are done with training, we can use our network to detect the objects in Minecraft while the game is running. From the result of object detection, we find the location of the target animal that we are most confident about (there can be many targets on the screen and we choose the one with highest probability). Then we write a simple algorithm to move our agent's aim to the center of the bounding box of the chosen target and then shoot an arrow at that target. 
 ## Evaluation
-The accuracy we have measured is about 63.06% ($$\frac{426 \text{detected} - 6 \text{false positive}}{666 \text{expected from 100 images}}$$). Since our project mainly focus on image detection, the performance of the project is measured by how accurately our object detector detects the animals. After we finish training our dataset, we tested our model on a set of 100 images that are generated from the game. For example:
+The accuracy we have measured is about 63.06% ($$\frac{426 \text{ (detected)} - 6 \text{ (false positive)}}{666 \text{ (expected from 100 images)}}$$). Since our project mainly focus on image detection, the performance of the project is measured by how accurately our object detector detects the animals. After we finish training our dataset, we tested our model on a set of 100 images that are generated from the game. For example:
 <br />
 <br />
-<img src="./../train/testdata/_28.jpg" alt="(28) Overcount Image" style="width:50%;height:50%">
+<img src="../train/testdata/_28.jpg" alt="(28) Overcount Image" style="width:50%;height:50%">
 <br />
 <br />
 In the picture above, it is easy to see that the cow is counted twice. We count that as a false positive and subtract from the number of detections to obtain a more accurate evaluation. The accuracy is the number of correct detections over the total number of objects. These numbers are counted manually.
@@ -25,7 +25,7 @@ In the picture above, it is easy to see that the cow is counted twice. We count 
 There are cases where it is unclear whether to count the object or not. Our rules to count an object currently is to count them if they are blocked only a little (or not at all), or most of their bodies are in the shot. There are hard cases to determine, for example:
 <br />
 <br />
-<img src="./../train/testdata/_11.jpg" alt="(11) Pig?" style="width:50%;height:50%">
+<img src="../train/testdata/_11.jpg" alt="(11) Pig?" style="width:50%;height:50%">
 <br />
 <br />
 As we see here, the pig on the right (which is amazingly detected) doesn't have its body shown, and the pig behind the sheep on the left makes it hard to determine whether it should be counted. Therefore, this also affects the accuracy of the detected/expected ratio.
