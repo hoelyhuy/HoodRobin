@@ -31,6 +31,7 @@ YOLO uses a totally different approach. It applies a single neural network to th
 The model has several advantages over classifier-based systems. It looks at the whole image at test time so its predictions are informed by global context in the image. It also makes predictions with a single network evaluation unlike systems like R-CNN which require thousands for a single image. This makes it extremely fast, more than 1000x faster than R-CNN and 100x faster than Fast R-CNN. See our paper for more details on the full system.
 <br />
 [Reference page](https://pjreddie.com/darknet/yolo/)
+<br />
 <img src="yolo.png" alt="yolo.png" style="width:50%;height:50%">
 ## Team members
 Edwin Li
