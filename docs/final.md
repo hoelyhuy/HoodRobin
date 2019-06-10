@@ -10,7 +10,7 @@ Firstly, we write a program to generate the dataset, which is a set of many imag
 <br /> <br />
 After collecting the screenshots, we use an image labeling tool, which is called labelImg to create annotation files for the screenshots. An annotation file is an additional file that tells more information about the image; for this project, the additional information is which objects are in the image and where are they in the image. labelImg allows us to draw bounding box around an object and label that object, then generate an annotation file that is need for training. 
 <br /> <br />
-<img src="image_label.png" alt="image_label.png" style=width:50%;height:50%">
+<img src="image_label.jpg" alt="image_label.jpg" style="width:50%;height:50%">
 <br /> <br />
 We will be using a real-time object detection algorithm called YOLO (You Only Look Once) to detect the animals in the agent's view. How the object detection algorithm works is that we apply a single neural network to the full image. This network divdes the image into regions and predict bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities. The model has several advantages over classifier-based systems. It looks at the whole image at test time so its predictions are informed by global context in the image. It also makes predictions with a single network evaluation unlike systems like R-CNN which require thousands for a single image. This makes it extremely fast, more that 1000 times faster than R-CNN and 100 times faster than Fast R-CNN. [YOLO: Real-Time Object Detection](https://pjreddie.com/darknet/yolo/)
 <br /> <br />
@@ -18,7 +18,8 @@ Darknet is an open source neural network framework written in C and CUDA. It sup
 <br /> <br />
 Once we are done with training, we can use our network to detect the objects in Minecraft while the game is running. Darkflow returns image detection results in a form of json array of json object. Each json object contains the information about the label of the object, its bounding box which is specified by the coordinate of the top left corner and the coordinate of the bottom right corner, confidence level of prediction. We extract this information to find the center of the bounding box around the target object (midpoint of the 2 corner points) that we are most confident about and then move the agent's aim towards that point and then shoot an arrow at the target.
 <br /> <br />
-<img src="aim_algorithm.png" alt="aim_algorithm.png" style=width:50%;height:50%">
+<img src="aim_algorithm.jpg" alt="aim_algorithm.jpg" style="width:50%;height:50%">
+<br /> <br />
 ## Evaluation
 #### How does YOLO make decisions about object detection
 YOLO divides the input image into an SxS grid. For each grid cell, it predicts B boundary boxes, which are defined by the algorithm, and each box has one box confidence score. Each grid cell predicts only one object.
