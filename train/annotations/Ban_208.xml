@@ -1,7 +1,7 @@
 <annotation verified="yes">
 	<folder>screenshots</folder>
-	<filename>_208.jpg</filename>
-	<path>C:\Users\mrgam\Desktop\Ban\UCI\2019 Spring\CS 175\proj\TeamBEH\train\screenshots\_208.jpg</path>
+	<filename>Ban_208.jpg</filename>
+	<path>C:\Users\huyph\OneDrive\Desktop\UCI\2019spring\CS175\project_in_minecraft\TeamBEH\train\screenshots\Ban_208.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -57,6 +57,18 @@
 			<ymin>247</ymin>
 			<xmax>475</xmax>
 			<ymax>318</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>pig</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>742</xmin>
+			<ymin>281</ymin>
+			<xmax>800</xmax>
+			<ymax>346</ymax>
 		</bndbox>
 	</object>
 </annotation>

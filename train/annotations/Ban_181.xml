@@ -1,0 +1,26 @@
+<annotation>
+	<folder>screenshots</folder>
+	<filename>Ban_181.jpg</filename>
+	<path>C:\Users\huyph\OneDrive\Desktop\UCI\2019spring\CS175\project_in_minecraft\TeamBEH\train\screenshots\Ban_181.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pig</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>277</ymin>
+			<xmax>37</xmax>
+			<ymax>322</ymax>
+		</bndbox>
+	</object>
+</annotation>

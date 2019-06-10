@@ -1,7 +1,7 @@
 <annotation>
-	<folder>images</folder>
-	<filename>_134.jpg</filename>
-	<path>/Users/ed-1/Documents/cs175/training-set/images/_134.jpg</path>
+	<folder>screenshots</folder>
+	<filename>edwin_134.jpg</filename>
+	<path>C:\Users\huyph\OneDrive\Desktop\UCI\2019spring\CS175\project_in_minecraft\TeamBEH\train\screenshots\edwin_134.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -33,6 +33,18 @@
 			<ymin>172</ymin>
 			<xmax>493</xmax>
 			<ymax>254</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>cow</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>351</xmin>
+			<ymin>165</ymin>
+			<xmax>408</xmax>
+			<ymax>235</ymax>
 		</bndbox>
 	</object>
 </annotation>

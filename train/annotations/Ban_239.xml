@@ -1,7 +1,7 @@
 <annotation>
 	<folder>screenshots</folder>
-	<filename>_239.jpg</filename>
-	<path>C:\Users\mrgam\Desktop\Ban\UCI\2019 Spring\CS 175\proj\TeamBEH\train\screenshots\_239.jpg</path>
+	<filename>Ban_239.jpg</filename>
+	<path>C:\Users\huyph\OneDrive\Desktop\UCI\2019spring\CS175\project_in_minecraft\TeamBEH\train\screenshots\Ban_239.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -21,6 +21,18 @@
 			<ymin>252</ymin>
 			<xmax>264</xmax>
 			<ymax>396</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>sheep</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>297</ymin>
+			<xmax>130</xmax>
+			<ymax>498</ymax>
 		</bndbox>
 	</object>
 </annotation>
