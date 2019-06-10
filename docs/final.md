@@ -37,13 +37,12 @@ The class confidence score measures the confidence on both the classification an
 * class confidence score = P(class i) * IoU <br /> 
 
 Where:
-	* P(object) is the probability the box contains an object.
-	* IoU is the intersection over union between the predicted box and the ground truth.
-	* P(class i | object) is the probability the object belongs to class i given an object is presence.
-	* P(class i) is the probability the object belongs to class i.
+* P(object) is the probability the box contains an object.
+* IoU is the intersection over union between the predicted box and the ground truth.
+* P(class i | object) is the probability the object belongs to class i given an object is presence.
+* P(class i) is the probability the object belongs to class i.
 
-<br /> <br />
-Before incorporating our network into the game we need to evaluate its performance. For setting up the evaluation, we generate 300 test images, run darkflow on the test data once with the model from previous submission and once with model that we just trained on a bigger size dataset (about 900 images) and compare the performances of the two models. The previous model is trained on a dataset of about 400 images, and traning is terminated after 4250 iterations. Our latest model is trained on a dataset of about 900 images, and training is terminated after 4250 iterations. 
+<br /> Before incorporating our network into the game we need to evaluate its performance. For setting up the evaluation, we generate 300 test images, run darkflow on the test data once with the model from previous submission and once with model that we just trained on a bigger size dataset (about 900 images) and compare the performances of the two models. The previous model is trained on a dataset of about 400 images, and traning is terminated after 4250 iterations. Our latest model is trained on a dataset of about 900 images, and training is terminated after 4250 iterations. 
 
 <br /> The metric that we use to measure performance is accuracy which is the number of correct detections over the total number of objects. The correct detections and the objects are counted manually. The overall accuracy is computed by taking the ratio of correct detections (can be from any class) to total objects. In addition to the overall accuracy, we also compute 5 class accuracies for the 5 object types (pig, cow, sheep, ozelot, rabbit), because we are interested in whether there is an improvement on detecting each of the object type. Class accuracy is computed by taking the ratio of correct detection of that class over total objects of that class; for example, the number of correctly detected pigs over total pigs.
 
