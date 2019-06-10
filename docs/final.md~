@@ -18,13 +18,33 @@ We will be using a real-time object detection algorithm called YOLO (You Only Lo
 Darknet is an open source neural network framework written in C and CUDA. It supports both CPU and GPU computation. To carry out training and object detection, we use darkflow, which is a translation of darknet to tensorflow. Once we are done with generating the screenshots and the annotation file, we store the screenshots and the annotation files in darkflow workspace. In addition to our own dataset, we also need YOLOv2 configuration file (with some small adjustments) and YOLOv2 weights to train. For training we use Google Colab, which supports Python notebook and many other useful machine learning tools such as opencv, tensorflow, numpy, plus a free GPU that helps to improve training speed. After a number of interations of training, we look for a point where the loss converges and stop our training there.
 <br />
 <br />
-Once we are done with training, we can use our network to detect the objects in Minecraft while the game is running. Darkflow returns image detection results in a form of json array of json object. Each json object contains the information about the label of the object, its bounding box which is specified by the coordinate of the top left corner and the coordinate of the bottom right corner, confidence level of prediction. We extract this information to find the center of the bounding box around the target object that we are most confident about and then move the agent's aim towards that pointand then shoot an arrow at the target.
+Once we are done with training, we can use our network to detect the objects in Minecraft while the game is running. Darkflow returns image detection results in a form of json array of json object. Each json object contains the information about the label of the object, its bounding box which is specified by the coordinate of the top left corner and the coordinate of the bottom right corner, confidence level of prediction. We extract this information to find the center of the bounding box around the target object (midpoint of the 2 corner points) that we are most confident about and then move the agent's aim towards that point and then shoot an arrow at the target.
 ## Evaluation
-Before incorporating our network into the game we need to evaluate its performance. In order to evaluate the performance of our model we generate a test set of 300 screenshots, run darkflow on the test set and collect the output. Two types of evaluation will be carried out to evaluate the performance of the model which are qualitative evaluation and quantitative evaluation. For setting up the evaluation, we generate 300 test image, run darkflow on the test data once with the old weights that we had for previous submisstion and once with 
-For quantitative evaluation, we measure the accuracy of our object detection system as the number of correct detections over the total number of objects, which are counted manually. We consider an animal one object when about more than 30% of the animal's body can be seen. For example, if the back legs of a pig is visible, we count that pig as one object. If only the head of an ozelot is visible, we still count that ozelot one object. However if only the tail of an ozelot is visible then we don't count that ozelot as one object. Also if only two horns of a cow is visible, we don't count that cow as an object. Then we compare the accuracy of the image detector we use for final submission versus the object detector we had before to verify our hypothesis that whether increasing dataset size would improve the image detector's performance.
+#### How does YOLO make decisions about object detection
+YOLO divides the input image into an SxS grid. For each grid cell, it predicts B boundary boxes, which are defined by the algorithm, and each box has one box confidence score. Each grid cell predicts only one object.
+some image here
+Each boundary box contains 5 elements: (x,y,w,h) and a box confidence score. The confidence score reflects how likely the box contains an object (objectness) and how accurate is the boundary box. Given that there are SxS grid cells and each grid cell predicts B boundary box, we can compute SxSxB box confidence scores. However, we only keep the boundary boxes with high box confidence score (greater than 0.25) and disregard the boxes with low confidence score. The conditional class probability is the probability that the detected object belongs to a particular class (one probability per category for each cell). The class confidence score for each prediction box is computed as:
 <br />
 <br />
-For qualitative evaluation, we measure how well the boxes are bounded around the objects. The result for qualitative evaluation will be a percentage. It is the number of good bounding box over the total number of bounding box (regardless of what the labels are). A good bounding box bounds nicely around the visible part of the object, as some part of the object can be blocked by other objects. A bad bounding box only covers partial of the visible part of the object. Double bounding box, which is two boxes bounding the same object, is also considered one bad bounding box.
+class confidence score = box confidence score * conditional class probability
+<br />
+<br />
+The class confidence score measures the confidence on both the classification and the localization, which is where an object is located. 
+<br /> box confidence score = P(object) * IoU
+<br /> conditional class probability = P(class i | object)
+<br /> class confidence score = P(class i) * IoU
+<br /> where:
+<br /> P(object) is the probability the box contains an object.
+<br /> IoU is the intersection over union between the predicted box and the ground truth.
+<br /> P(class i | object) is the probability the object belongs to class i given an object is presence.
+<br /> P(class i) is the probability the object belongs to class i.
+<br /> <br />
+
+Before incorporating our network into the game we need to evaluate its performance. For setting up the evaluation, we generate 300 test image, run darkflow on the test data once with the model from previous submission and once with model that we just trained on a bigger size dataset (about 900 images) and compare the performances of the two models.
+
+<br /> The metric that we use to measure performance is accuracy which is the number of correct detections over the total number of objects. The correct detections and the objects are counted manually. The overall accuracy is computed by taking the ratio of correct detections (can be from any class) to total objects. In addition to the overall accuracy, we also compute 5 class accuracies for the 5 object types (pig, cow, sheep, ozelot, rabbit), because we are interested in whether there is an improvement on each of the object type. Class accuracy is computed by taking the ratio of correct detection of that class over total objects of that class; for example, the number of correctly detected pigs over total pigs.
+<br />
+<br />
 ## References
 [Image Processing](https://github.com/jennyzeng/Minecraft-AI)
 <br />
