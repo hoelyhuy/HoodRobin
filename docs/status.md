@@ -52,4 +52,4 @@ Some limitations that we can think of are the overhead to load the agent's curre
 <br />
 [YOLO: Real-Time Object Detection (C)](https://pjreddie.com/darknet/yolo/) 
 ## Video Summary
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/fbPsRyht4rU/0.jpg)](http://www.youtube.com/watch?v=fbPsRyht4rU)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fbPsRyht4rU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
