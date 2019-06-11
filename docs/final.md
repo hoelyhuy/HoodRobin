@@ -22,7 +22,6 @@ Once we are done with training, we can use our network to detect the objects in 
 <br /> <br />
 For the baseline case, we generate a world with only one animal presented in the agent's view and test to see if the agent can detect that animal. There are 5 baseline cases that we test, which are the 5 types of animals that we decide for this project. Also when there is one pig in the agent's view, we want to see if the agent can recognize the pig as his killing target and tries to attack the pig.
 <br /> <br />
-## Evaluation
 #### How does YOLO make decisions about object detection
 YOLO divides the input image into an SxS grid. For each grid cell, it predicts B boundary boxes, which are defined by the algorithm, and each box has one box confidence score. Each grid cell predicts only one object.
 <br /> <br /> <img src="yolo_introduction_1.jpg" alt="yolo_introduction_1.jpg" style="width:50%;height:50%"> <br /> <br />
@@ -45,7 +44,9 @@ Where:
 <br /> Before incorporating our network into the game we need to evaluate its performance. For setting up the evaluation, we generate 300 test images, run darkflow on the test data once with the model from previous submission and once with model that we just trained on a bigger size dataset (about 900 images) and compare the performances of the two models. The previous model is trained on a dataset of about 400 images, and traning is terminated after 4250 iterations. Our latest model is trained on a dataset of about 900 images, and training is terminated after 4250 iterations. 
 
 <br /> The metric that we use to measure performance is accuracy which is the number of correct detections over the total number of objects. The correct detections and the objects are counted manually. The overall accuracy is computed by taking the ratio of correct detections (can be from any class) to total objects. In addition to the overall accuracy, we also compute 5 class accuracies for the 5 object types (pig, cow, sheep, ozelot, rabbit), because we are interested in whether there is an improvement on detecting each of the object type. Class accuracy is computed by taking the ratio of correct detection of that class over total objects of that class; for example, the number of correctly detected pigs over total pigs.
-
+<br /> <br/>
+## Evaluation (for review only, please tell me what you guys think about these calculations)
+The current formula I use to calculate accuracy is $100%-\frac{\text{absolute difference between detected # and total #}}{\text{total #}}\cdot 100$. Another calculation I did was average difference: summing all absolute difference and take the average. Overall accuracy goes from 45.57% (old) to 61.97% (new), but the accuracy of detecting rabbit decreased: 49.80% (old) to 32.88% (new). (WHY?!?)... 
 ## Conclusion
 From this project, we get an opportunity to learn more in-depth about object real-time object detection. We learn about the real-time object detection algorithm YOLO and the math that is used behind the scene for making predictions. We get to learn the steps of doing image detection which are data generation, image labeling, training a neural network, tuning some factors to increase model's performance. We get do learn and discover the two subjects in AI/ML, computer vision and neural network, that all of us have little to none hands-on experience on. 
 ## References
