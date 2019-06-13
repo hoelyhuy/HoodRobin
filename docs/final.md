@@ -81,15 +81,17 @@ Rabbit|0.40|0.48
 Overall|0.66|0.42
 
 <br /> <br />
-<img src="avg_diff_chart.jpg" alt="Average Difference Chart" style="width:50%;height:50%">
+<img src="avg_diff_chart.JPG" alt="Average Difference Chart" style="width:50%;height:50%">
 <br /> <br />
 ### Accuracy and average difference findings (qualitative results)
 In the old neural network (which we used for our status report), the overall accuracy is 45.57% (the drop in percentage compared to our status report was because we use 300 and more images to test versus 100 previously, which makes the result more accurate). The improved neural network has the overall accuracy of 61.97%, a great increase thanks to most of the animals' individual accuracies, except for the rabbits' (decreased from 49.80% to 32.88%), since many rabbits tend to stay near the fence, which has the same color as the rabbits. Another explanation is that rabbits are not labelled enough in our trained data (difficult to see with our eyes, the rabbits do not appear as much in the training images,...).
+
 Overall, the difference between the amount of detected animals and true amount of animals in the frame is not a lot, and does not vary too much between the old network and the new network, mainly due to the small amount of animals in the frame (less than 5 of one type of animals per frame). The overall average difference of the old detection network is 0.66 (i.e. on average, detects 0.66 animals incorrectly), while the new network has a rate of 0.42, closer to 0 (closer to detecting perfectly). Among this, the average detection rate of cows is the highest (1.01 for the old network and 0.60 for the new network). One of the many reasons for this number is that cows tend to stay behind other animals. While they are the largest, our training data mostly highlight cows that have most of its body exposed, so detecting a cow behind some other large animals (like pigs, sheeps) will be difficult. Another reason for this is some cows stay in group, and their colors merge, so it is also difficult to say if it is one or two cows. An example is given below:
 <br /> <br />
 <img src="cow_example.jpg" alt="Cow Example" style="width:50%;height:50%">
 <br /> <br />
 The cow on the left is detected, while the two on the right is not (one is covered by the ozelot, and the other has the similar color to the covered one). It should also be noted that there is an undetected rabbit as well (which stays near the fence on the left), and this has been explained above.
+
 Since our project focus on detecting pigs, it is noteworthy to look at the accuracy of detecting pigs. Among the new network accuracy of 5 animals, pig ranks second after ozelot (70.68% for pigs and 71.51& for ozelots), and also second to ozelots among average difference of 5 (0.35 for pigs and 0.31 for ozelots).
 ## Conclusion
 From this project, we get an opportunity to learn more in-depth about object real-time object detection. We learn about the real-time object detection algorithm YOLO and the math that is used behind the scene for making predictions. We get to learn the steps of doing image detection which are data generation, image labeling, training a neural network, tuning some factors to increase model's performance. We get do learn and discover the two subjects in AI/ML, computer vision and neural network, that all of us have little to none hands-on experience on.
