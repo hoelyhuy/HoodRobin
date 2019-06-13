@@ -3,6 +3,7 @@ layout: default
 title: Final Report
 ---
 ## Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nLSsMIVwrUc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ## Project Summary
 In our Minecraft-AI project, the agent tries to recognize different animals that appear in his view such as Pig, Rabbit, Ozelot, Sheep, Cow and then attempts to attack the Pig with a bow and arrows. Since we are interested in computer vision, we will attempt to use a real-time object detection algorithm called YOLO (You Only Look Once) to detect which animals are in the agents view and where are the animals in the agent's view. Object detection can be very slow if we don't have the right approach. For instance, given an image and the objective to detect the objects in the image, one naive solution is to predict all the possible bounding box that we can draw in the image, which is very inefficient. Inorder to detect objects in real-time, we need a more sophisticated algorithm that run fast but still gives correct predictions with high accuracy.
 ## Approaches
