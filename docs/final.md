@@ -25,8 +25,11 @@ Once we are done with training, we can use our network to detect the objects in 
 <br /> <br />
 For the baseline case, we generate a world with only one animal presented in the agent's view and test to see if the agent can detect that animal. There are 5 baseline cases that we test, which are the 5 types of animals that we decide for this project. Also when there is one pig in the agent's view, we want to see if the agent can recognize the pig as his killing target and tries to attack the pig.
 <br /> <br />
-#### How does YOLO make decisions about object detection
-YOLO divides the input image into an SxS grid. For each grid cell, it predicts B boundary boxes, which are defined by the algorithm, and each box has one box confidence score. Each grid cell predicts only one object.
+
+## Evaluation
+
+### How does YOLO make decisions about object detection
+<br /> YOLO divides the input image into an SxS grid. For each grid cell, it predicts B boundary boxes, which are defined by the algorithm, and each box has one box confidence score. Each grid cell predicts only one object.
 <br /> <br /> <img src="yolo_introduction_1.jpg" alt="yolo_introduction_1.jpg" style="width:50%;height:50%"> <br /> <br />
 Each boundary box contains 5 elements: (x,y,w,h) and a box confidence score. The confidence score reflects how likely the box contains an object (objectness) and how accurate is the boundary box. Given that there are SxS grid cells and each grid cell predicts B boundary box, we can compute SxSxB box confidence scores. However, we only keep the boundary boxes with high box confidence score (greater than 0.25) and discard the boxes with low confidence score. The conditional class probability is the probability that the detected object belongs to a particular class (one probability per category for each cell). The class confidence score for each prediction box is computed as:
 <br /> <br />
@@ -48,16 +51,16 @@ Where:
 
 <br /> The metric that we use to measure performance is accuracy which is the number of correct detections over the total number of objects. The correct detections and the objects are counted manually. The overall accuracy is computed by taking the ratio of correct detections (can be from any class) to total objects. In addition to the overall accuracy, we also compute 5 class accuracies for the 5 object types (pig, cow, sheep, ozelot, rabbit), because we are interested in whether there is an improvement on detecting each of the object type. Class accuracy is computed by taking the ratio of correct detection of that class over total objects of that class; for example, the number of correctly detected pigs over total pigs.
 <br /> <br/>
-
-## Evaluation
 ### Formulas
-<br/> The formula we used to calculate individual animal's detection accuracy is $$100%-\frac{\text{|true # - detected #|}}{\text{true #}}\cdot 100$$, where $$\text{detected #}$$ is the amount of detected specified animals in an image and $$\text{true #}$$ is the actual amount of specified animals.
+<br/> The formula we used to calculate individual animal's detection accuracy is $$100\%-\frac{\text{|true # - detected #|}}{\text{true #}}\cdot 100$$, where $$\text{detected #}$$ is the amount of detected specified animals in an image and $$\text{true #}$$ is the actual amount of specified animals.
 The overall accuracy is the average of the 5 accuracies (from 5 types of animals: cows, ozelots, pigs, rabbits, sheeps) calculated.
 Another measurement we did is the average difference on each animal(i.e. on average, how many animals does the detection network gets incorrectly), given by $$\frac{\text{|true # - detected #|}}{\text{# of images}}$$, and the overall average difference is also the average of the 5 differences.
 ### Quantitative results
+
 [Test data and images](https://github.com/hoelyhuy/HoodRobin/tree/master/train/final_counting)
 
-Accuracy (%)|Old network|New network
+
+Accuracy (%)  |  Old network  |  New network
 :---|---|---
 Pig|28.89|70.68
 Sheep|38.92|68.54
@@ -71,7 +74,7 @@ Overall|45.57|61.97
 <img src="acc_chart.jpg" alt="Accuracy Chart" style="width:50%;height:50%">
 <br /> <br />
 
-Average difference|Old network|New network
+Average difference  |  Old network  |  New network
 :---|---|---
 Pig|0.83|0.35
 Sheep|0.70|0.36
@@ -81,10 +84,10 @@ Rabbit|0.40|0.48
 Overall|0.66|0.42
 
 <br /> <br />
-<img src="avg_diff_chart.JPG" alt="Average Difference Chart" style="width:50%;height:50%">
+<img src="avg_diff_chart.jpg" alt="Average Difference Chart" style="width:50%;height:50%">
 <br /> <br />
 ### Accuracy and average difference findings (qualitative results)
-In the old neural network (which we used for our status report), the overall accuracy is 45.57% (the drop in percentage compared to our status report was because we use 300 and more images to test versus 100 previously, which makes the result more accurate). The improved neural network has the overall accuracy of 61.97%, a great increase thanks to most of the animals' individual accuracies, except for the rabbits' (decreased from 49.80% to 32.88%), since many rabbits tend to stay near the fence, which has the same color as the rabbits. Another explanation is that rabbits are not labelled enough in our trained data (difficult to see with our eyes, the rabbits do not appear as much in the training images,...).
+<br/> In the old neural network (which we used for our status report), the overall accuracy is 45.57% (the drop in percentage compared to our status report was because we use 300 and more images to test versus 100 previously, which makes the result more accurate). The improved neural network has the overall accuracy of 61.97%, a great increase thanks to most of the animals' individual accuracies, except for the rabbits' (decreased from 49.80% to 32.88%), since many rabbits tend to stay near the fence, which has the same color as the rabbits. Another explanation is that rabbits are not labelled enough in our trained data (difficult to see with our eyes, the rabbits do not appear as much in the training images,...).
 
 <br/> Overall, the difference between the amount of detected animals and true amount of animals in the frame is not a lot, and does not vary too much between the old network and the new network, mainly due to the small amount of animals in the frame (less than 5 of one type of animals per frame). The overall average difference of the old detection network is 0.66 (i.e. on average, detects 0.66 animals incorrectly), while the new network has a rate of 0.42, closer to 0 (closer to detecting perfectly). Among this, the average detection rate of cows is the highest (1.01 for the old network and 0.60 for the new network). One of the many reasons for this number is that cows tend to stay behind other animals. While they are the largest, our training data mostly highlight cows that have most of its body exposed, so detecting a cow behind some other large animals (like pigs, sheeps) will be difficult. Another reason for this is some cows stay in group, and their colors merge, so it is also difficult to say if it is one or two cows. An example is given below:
 <br /> <br />
