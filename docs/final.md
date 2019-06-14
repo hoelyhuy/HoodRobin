@@ -59,29 +59,93 @@ Another measurement we did is the average difference on each animal(i.e. on aver
 
 [Test data and images](https://github.com/hoelyhuy/HoodRobin/tree/master/train/final_counting)
 
-
-Accuracy (%)  |  Old network  |  New network
-:---|---|---
-Pig|28.89|70.68
-Sheep|38.92|68.54
-Cow|44.17|66.24
-Ozelot|66.06|71.51
-Rabbit|49.80|32.88
-Overall|45.57|61.97
-
+<style>
+table, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 10px;
+	text-align: mid;
+}
+</style>
+<table>
+	<tr>
+		<th style="text-align:left">Accuracy (%)</th>
+		<th>Old network</th>
+		<th>New network</th>
+	</tr>
+	<tr>
+		<th style="text-align:left">Pig</th>
+		<td>28.89</td>
+		<td>70.68</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Sheep</th>
+		<td>38.92</td>
+		<td>68.54</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Cow</th>
+		<td>44.17</td>
+		<td>66.24</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Ozelot</th>
+		<td>66.06</td>
+		<td>71.51</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Rabbit</th>
+		<td>49.80</td>
+		<td>32.88</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Overall</th>
+		<td>45.57</td>
+		<td>61.97</td>
+	</tr>
+</table>
 
 <br /> <br />
 <img src="acc_chart.jpg" alt="Accuracy Chart" style="width:50%;height:50%">
 <br /> <br />
 
-Average difference  |  Old network  |  New network
-:---|---|---
-Pig|0.83|0.35
-Sheep|0.70|0.36
-Cow|1.01|0.60
-Ozelot|0.36|0.31
-Rabbit|0.40|0.48
-Overall|0.66|0.42
+<table>
+	<tr>
+		<th style="text-align:left">Average difference</th>
+		<th>Old network</th>
+		<th>New network</th>
+	</tr>
+	<tr>
+		<th style="text-align:left">Pig</th>
+		<td>0.83</td>
+		<td>0.35</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Sheep</th>
+		<td>0.70</td>
+		<td>0.36</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Cow</th>
+		<td>1.01</td>
+		<td>0.60</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Ozelot</th>
+		<td>0.36</td>
+		<td>0.31</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Rabbit</th>
+		<td>0.40</td>
+		<td>0.48</td>
+	</tr>
+	<tr>
+		<th style="text-align:left">Overall</th>
+		<td>0.66</td>
+		<td>0.42</td>
+	</tr>
+</table>
 
 <br /> <br />
 <img src="avg_diff_chart.jpg" alt="Average Difference Chart" style="width:50%;height:50%">
